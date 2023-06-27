@@ -1,20 +1,22 @@
 version: 0.2
 
-phases:
-  install:
-    commands:
-      - echo "Installing nginx..."
-      - sudo apt-get update -y
-      - sudo apt-get install nginx -y
-  build:
-    commands:
-      - echo "Building the project..."
-      - cp index.html /var/www/html/
-  post_build:
-    commands:
-      - echo "configuring NGINX"
-
+phases: 
+    build:
+        commands:
+            - echo "Build block"
+            - ls
+            - echo "Running tests to check if "Congratulations" present in index.html file"
+            - grep "Congratulations" index.html
+    post_build:
+        commands:
+            - echo "Post build phase"
 artifacts:
-  files:
-    - /var/www/html/index.html
-    
+    files:
+        - scripts/install_dependencies
+        - scripts/start_server
+        - scripts/stop_server
+        - index.html
+        - appspec.yml
+    discard-paths: yes
+
+            

@@ -1,3 +1,5 @@
 #!/bin/bash
-systemctl start nginx 
-systemctl enable nginx    
+isExistApp = `pgrep httpd`
+if [[ -n  $isExistApp ]]; then
+    service httpd stop        
+fi

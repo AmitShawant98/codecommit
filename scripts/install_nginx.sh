@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt install nginx -y
+service httpd start -y 
