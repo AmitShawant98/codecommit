@@ -17,6 +17,7 @@ artifacts:
         - scripts/stop_server
         - index.html
         - AppSpec.yml
+        - buildspec.yml
     
 
             
