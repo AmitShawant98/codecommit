@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo service httpd start -y 
+sudo service nginx start -y 
